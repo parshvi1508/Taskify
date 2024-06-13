@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Taskify - To-Do List{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <header>
+            <h1>Taskify - To-Do List</h1>
+        </header>
+
+        <main>
+            <ul class="task-list">
+                {% for task in tasks %}
+                <li class="task">
+                    <div class="task-info">
+                        <h2>{{ task.title }}</h2>
+                        <p>{{ task.description }}</p>
+                    </div>
+                    <div class="task-actions">
+                        <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post">
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </main>
+
+        <footer>
+            <h2>Add New Task</h2>
+            <form action="{{ url_for('add_task') }}" method="post">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <button type="submit" class="btn-add">Add Task</button>
+            </form>
+        </footer>
+    </div>
+    {% endblock %}
+</body>
+</html>

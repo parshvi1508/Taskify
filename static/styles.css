@@ -1,0 +1,254 @@
+:root {
+    --primary-blue: #1e2a78; /* Dark blue */
+    --secondary-blue: #3a4e9c; /* Medium blue */
+    --tertiary-blue: #7184c6; /* Light blue */
+    --black: #333; /* Black */
+    --red: #ff4d4d; /* Red */
+    --white: #fff; /* White */
+    --grey: #f0f0f0; /* Light grey */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--grey);
+}
+
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+header a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav {
+    text-align: center;
+    background-color: var(--secondary-blue);
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--tertiary-blue);
+    border-radius: 5px;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: #e60000; /* Darker red */
+}
+
+input[type="submit"]:active {
+    background-color: #cc0000; /* Even darker red */
+}
+
+.error-message {
+    color: var(--red);
+}
+
+.success-message {
+    color: var(--primary-blue);
+}
+
+.button-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: var(--secondary-blue);
+}
+
+.button-primary:active {
+    background-color: var(--tertiary-blue);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.button-secondary:active {
+    background-color: var(--secondary-blue);
+}
+
+.button-success {
+    background-color: #28a745; /* Green */
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-success:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.button-success:active {
+    background-color: #1e7e34; /* Even darker green */
+}
+
+.button-danger {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-danger:hover {
+    background-color: #cc0000; /* Darker red */
+}
+
+.button-danger:active {
+    background-color: #a80000; /* Even darker red */
+}
+
+.button-default {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-default:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.button-default:active {
+    background-color: #555; /* Dark grey */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.table tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+.alert {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
